@@ -1,4 +1,5 @@
 # React + Vite
+An application for tracking and documenting cities visited around the world.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
