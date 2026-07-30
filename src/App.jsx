@@ -1,3 +1,5 @@
+// Altanative to styling with CSS: UI libraries like Tailwind CSS, Material UI, Mantine, Chakra UI, Bootstrap
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
@@ -18,4 +20,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

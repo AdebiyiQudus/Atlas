@@ -18,4 +18,4 @@ function PageNav() {
   )
 }
 
-export default PageNav
+export default PageNav;
