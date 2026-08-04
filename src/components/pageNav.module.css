@@ -25,6 +25,7 @@
   color: var(--color-brand--2);
 }
 
+/* This CSS Module feature is adopted before and after the nav link (Login) has been visited*/
 a.ctaLink:link,
 a.ctaLink:visited {
   background-color: var(--color-brand--2);

@@ -55,6 +55,7 @@ input:focus {
   background-color: #fff;
 }
 
+/* This CSS Module feature can be used globally across all components that's why is it's declared in the index.css file */
 .cta:link,
 .cta:visited {
   display: inline-block;
