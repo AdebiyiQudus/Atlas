@@ -3,9 +3,9 @@ import styles from "./AppNav.module.css"
 
 function AppNav() {
   return (
-    <nav className={styles.nav}>
+    <div>
       App Navigation
-    </nav>
+    </div>
 
     // <nav className={nav}>App Navigation</nav>
   )

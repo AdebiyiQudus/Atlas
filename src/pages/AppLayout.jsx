@@ -1,11 +1,9 @@
 import AppNav from "../components/AppNav";
-
+import Sidebar from "../components/sidebar";
 function AppLayout() {
   return (
     <div>
-      <AppNav />
-
-      <p>Welcome to the App Layout </p>
+      <Sidebar />
     </div>
   ) 
 }
