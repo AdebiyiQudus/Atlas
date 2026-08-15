@@ -1,4 +1,5 @@
 import styles from './CityList.module.css'
+
 function CityList() {
   return (
     <ul className={styles.cityList}>
@@ -7,4 +8,4 @@ function CityList() {
   )
 }
 
-export default CityList
+export default CityList;
