@@ -43,10 +43,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
       // Default route for the "app" whenever the app page is rendered or when no specific child route is provided
-          <Route index element={<CityList />} />
+          <Route index element={<CityList  citiesProp={cities}
+           isLoadingProp={isLoading} />} />
 
       // Nested routes for the "app" path
-          <Route path="cities" element={<CityList />} />
+          <Route path="cities" element={<CityList citiesProp={cities}
+           isLoadingProp={isLoading}/>} />
           <Route path="countries" element={<p>Countries</p>} />
           <Route path="form" element={<p>Form</p>} />
 
