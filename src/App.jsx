@@ -2,8 +2,8 @@
 // <Outlet/> component acts as a placeholder or slot within a parent route's layout. It dictates where nested child route components should be rendered based on the current URL path.
 // <Route index /> is for defining the default child route of a parent route. It specifies which component should be rendered when the parent route is accessed without any additional path segments.
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
@@ -25,7 +25,7 @@ function App() {
 
       const res = await fetch(`${BASE_URL}/cities`)
       const data = await res.json();
-      
+
       setCities(data);
       } catch {
         alert("There was an error loading data...");
