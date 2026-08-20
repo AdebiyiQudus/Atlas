@@ -1,6 +1,7 @@
 // Altanative to styling with CSS: UI libraries like Tailwind CSS, Material UI, Mantine, Chakra UI, Bootstrap
 // <Outlet/> component acts as a placeholder or slot within a parent route's layout. It dictates where nested child route components should be rendered based on the current URL path.
 // <Route index /> is for defining the default child route of a parent route. It specifies which component should be rendered when the parent route is accessed without any additional path segments.
+// el.reponse =>serves as each of the country name onject
 
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
