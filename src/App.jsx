@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import AppLayout from "./pages/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
 import CityList from "./components/CityList";
+import CountryList from "./components/CountryList";
 
 const BASE_URL = "http://localhost:9000";
 
@@ -52,7 +53,8 @@ function App() {
       // Nested routes for the "app" path
           <Route path="cities" element={<CityList citiesProp={cities}
            isLoadingProp={isLoading}/>} />
-          <Route path="countries" element={<p>Countries</p>} />
+          <Route path="countries" element={<CountryList citiesProp={cities}
+           isLoadingProp={isLoading}/>} />
           <Route path="form" element={<p>Form</p>} />
 
         </Route>
