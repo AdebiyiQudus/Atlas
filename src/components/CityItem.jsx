@@ -10,10 +10,11 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ cityProp }) {
-  const { cityName, emoji, date } = cityProp;
+  const { cityName, emoji, date, id } = cityProp;
 
   return (
-    <li className={styles.cityItem}>
+    <li>
+      <Link className={styles.cityItem} to={`/app/cities/${id}`}>
       <span className={styles.emoji}>
         <ReactCountryFlag
           countryCode={emoji}
@@ -28,6 +29,7 @@ function CityItem({ cityProp }) {
       <h3 className={styles.name}>{cityName}</h3>
       <time className={styles.date}>({formatDate(date)})</time>
       <button className={styles.deleteBtn}>&times;</button>
+      </Link>
     </li>
   );
 }
