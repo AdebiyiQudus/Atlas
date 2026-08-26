@@ -1,5 +1,6 @@
 import ReactCountryFlag from "react-country-flag";
 import styles from './CityItem.module.css'
+import { Link } from "react-router-dom";
 
 
 const formatDate = (date) =>
@@ -14,7 +15,7 @@ function CityItem({ cityProp }) {
 
   return (
     <li>
-      <Link className={styles.cityItem} to={`/app/cities/${id}`}>
+      <Link className={styles.cityItem} to={`${id}`}>
       <span className={styles.emoji}>
         <ReactCountryFlag
           countryCode={emoji}
