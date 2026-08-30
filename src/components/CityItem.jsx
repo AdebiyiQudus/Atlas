@@ -27,6 +27,7 @@ function CityItem({ cityProp }) {
           aria-label={cityName}
         />
       </span>
+      
       <h3 className={styles.name}>{cityName}</h3>
       <time className={styles.date}>({formatDate(date)})</time>
       <button className={styles.deleteBtn}>&times;</button>
