@@ -9,11 +9,13 @@ function Map() {
   return (
     <div className={styles.mapContainer}>
       <h1>Map</h1>
-      <h1> Position: {lat}, {lng}</h1>
+      <h1> 
+        Position: {lat}, {lng}
+      </h1>
       <button onClick={() => {
         setSearchParams({ lat: 51.505, lng: -0.09 })
-      }}
-      >Change Position
+      }}>
+        Change Position
       </button>
     </div>
   )
