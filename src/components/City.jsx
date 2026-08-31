@@ -1,5 +1,6 @@
 import styles from "./City.module.css";
 import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
