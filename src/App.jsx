@@ -48,6 +48,7 @@ function App() {
         <Route path="product" element={<Product />} />
         <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
+
       // Default route for the "app" whenever the app page is rendered or when no specific child route is provided
           <Route index element={<CityList  citiesProp={cities}
            isLoadingProp={isLoading} />} />
@@ -57,6 +58,7 @@ function App() {
            isLoadingProp={isLoading}/>} />
 
            <Route path="cities/:id" element={<City />} />
+           
           <Route path="countries" element={<CountryList citiesProp={cities}
            isLoadingProp={isLoading}/>} />
           <Route path="form" element={<p>Form</p>} />
