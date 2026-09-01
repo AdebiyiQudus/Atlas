@@ -1,3 +1,5 @@
+// useParams is a hooks that allows us to access or get a dynamic value from the URL
+
 import styles from "./City.module.css";
 import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
