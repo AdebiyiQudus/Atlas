@@ -1,3 +1,5 @@
+// useSearchParams () - It is used to read and change query parameters in the URL.
+
 import { useSearchParams } from 'react-router-dom';
 import styles from './Map.module.css'
 
@@ -23,3 +25,4 @@ function Map() {
 
 
 export default Map
+
