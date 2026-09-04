@@ -1,4 +1,5 @@
 // useSearchParams () - It is used to read and change query parameters in the URL.
+// searchParams.get() - It is used to get the value of a specific query parameter from the URL.
 
 import { useSearchParams } from 'react-router-dom';
 import styles from './Map.module.css'
