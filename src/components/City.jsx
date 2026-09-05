@@ -1,4 +1,5 @@
 // useParams is a hooks that allows us to access or get a dynamic value from the URL
+// .get() is a method that allows us to get the value of a specific query parameter from the URL
 
 import styles from "./City.module.css";
 import { useParams } from "react-router-dom";
