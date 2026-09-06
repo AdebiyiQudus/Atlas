@@ -15,6 +15,7 @@ function Map() {
       <h1> 
         Position: {lat}, {lng}
       </h1>
+      
       <button onClick={() => {
         setSearchParams({ lat: 51.505, lng: -0.09 })
       }}>
