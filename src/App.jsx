@@ -4,6 +4,7 @@
 // el.country => serves as each of the country name object
 
 import { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Homepage from "./pages/Homepage";
@@ -49,7 +50,8 @@ function App() {
         <Route path="product" element={<Product />} />
         <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
-
+        
+      // replace prop changes how navigation interacts with the browser's history stack by replacing the current entry in history instead of adding a new one.
         <Route index element = {<Navigate replace to="cities" />} />
 
       // Default route for the "app" whenever the app page is rendered or when no specific child route is provided
