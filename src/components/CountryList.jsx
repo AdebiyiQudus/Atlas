@@ -16,8 +16,7 @@ function CountryList({ citiesProp, isLoadingProp }) {
 
   const countries = citiesProp.reduce((accArr, curCity) => { 
     if (!accArr.map((countryObj) => countryObj.name).includes(curCity.country)) 
-      return [...accArr, { name: curCity.country, emoji: 
-    curCity.emoji, id: curCity.id }];
+      return [...accArr, { name: curCity.country, emoji: curCity.emoji, id: curCity.id }];
     else return accArr;
   }, []);
 

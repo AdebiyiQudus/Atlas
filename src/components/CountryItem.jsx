@@ -1,10 +1,22 @@
+import ReactCountryFlag from "react-country-flag";
 import styles from "./CountryItem.module.css";
 
-function CountryItem({ country }) {
+function CountryItem({ countryProp }) {
   return (
     <li className={styles.countryItem}>
-      <span>{country.emoji}</span>
-      <span>{country.country}</span>
+      <span>
+        <ReactCountryFlag
+          countryCode={countryProp.emoji}
+          svg
+          style={{
+            fontSize: "2em",
+            lineHeight: "2em",
+          }}
+          aria-label={countryProp.name}
+        />
+    </span>
+      <span>
+        {countryProp.name}</span>
     </li>
   );
 }
