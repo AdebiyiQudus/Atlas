@@ -3,6 +3,8 @@ import { createContext, useState, useEffect } from "react";
 const BASE_URL = "http://localhost:9000";
 
 const CitiesContext = createContext();
+
+const CitiesContextProvider = ({ children }) => { 
  const [cities, setCities] = useState([]);
   const  [isLoading, setIsLoading] = useState(false);
 
@@ -23,3 +25,4 @@ const CitiesContext = createContext();
     }
     fetchCities();
   }, [])
+}
