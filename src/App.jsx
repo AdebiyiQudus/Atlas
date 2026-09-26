@@ -3,7 +3,7 @@
 // <Route index /> is for defining the default child route of a parent route. It specifies which component should be rendered when the parent route is accessed without any additional path segments.
 // el.country => serves as each of the country name object
 
-import { useState, useEffect } from "react";
+
 import { Navigate } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -36,13 +36,11 @@ function App() {
            isLoadingProp={isLoading} />} /> */}
 
       // Nested routes for the "app" path
-          <Route path="cities" element={<CityList citiesProp={cities}
-           isLoadingProp={isLoading}/>} />
+          <Route path="cities" element={<CityList />} />
 
            <Route path="cities/:id" element={<City />} />
            
-          <Route path="countries" element={<CountryList citiesProp={cities}
-           isLoadingProp={isLoading}/>} />
+          <Route path="countries" element={<CountryList/>} />
           <Route path="form" element={<Form />} />
 
         </Route>
