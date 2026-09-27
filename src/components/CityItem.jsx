@@ -1,5 +1,5 @@
 import ReactCountryFlag from "react-country-flag";
-import styles from './CityItem.module.css'
+import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
 
 const formatDate = (date) =>
@@ -9,8 +9,12 @@ const formatDate = (date) =>
     year: "numeric",
   }).format(new Date(date));
 
-function CityItem({ cityProp }) {
-  const { cityName, emoji, date, id, position } = cityProp;
+// Accept 'city' directly as a prop
+function CityItem({ city }) {
+  // Safety guard in case city is undefined
+  if (!city) return null;
+
+  const { cityName, emoji, date, id, position } = city;
 
   return (
     <li>
