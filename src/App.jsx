@@ -3,8 +3,6 @@
 // <Route index /> is for defining the default child route of a parent route. It specifies which component should be rendered when the parent route is accessed without any additional path segments.
 // el.country => serves as each of the country name object
 
-
-import { Navigate } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Homepage from "./pages/Homepage";
