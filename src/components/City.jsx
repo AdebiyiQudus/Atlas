@@ -2,9 +2,12 @@
 // .get() is a method that allows us to get the value of a specific query parameter from the URL
 
 import styles from "./City.module.css";
+import ReactCountryFlag from "react-country-flag";
 import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
+import { useEffect } from "react";
+import Spinner from "./Spinner";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -16,17 +19,34 @@ const formatDate = (date) =>
 
 function City() {
   const { id } = useParams();
-  const [getCity, currentCity] = useCities();
+  const {getCity, currentCity, isLoading} = useCities();
+
+  useEffect (
+    function() {
+      getCity(id);
+    }, [id]
+  )
 
   const { cityName, emoji, date, notes } = currentCity;
 
-
+  if (isLoading) return <Spinner />;
+ 
   return (
     <div className={styles.city}>
       <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+    <span className={styles.emoji}>
+          <ReactCountryFlag
+            countryCode={emoji}
+            svg
+            style={{
+              fontSize: "1.6em",
+              lineHeight: "1.6em",
+            }}
+            aria-label={cityName}
+          />
+        </span> {cityName}
         </h3>
       </div>
 
