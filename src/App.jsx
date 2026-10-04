@@ -4,6 +4,7 @@
 // el.country => serves as each of the country name object
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
