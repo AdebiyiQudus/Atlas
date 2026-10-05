@@ -24,7 +24,7 @@ function CityItem({ city }) {
     <Link 
     className={`${styles.cityItem} 
     ${id === currentCity.id ? styles["cityItem--active"] : ""  
-}`}
+  }`}
     to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
       
     <span className={styles.emoji}>
