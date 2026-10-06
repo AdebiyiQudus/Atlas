@@ -2,7 +2,7 @@ import styles from "./User.module.css";
 
 const FAKE_USER = {
   name: "Qudus",
-  email: "qudus@example.com",
+  email: "qudusadebiyi@example.com",
   password: "qwerty",
   avatar: "https://i.pravatar.cc/100?u=zz",
 };
