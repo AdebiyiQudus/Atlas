@@ -37,28 +37,28 @@
       "id": 98443197
     },
     {
+      "cityName": "Paris",
+      "country": "France",
+      "emoji": "FR",
+      "date": "2027-03-20T10:30:00.000Z",
+      "notes": "A city full of life!",
+      "position": {
+        "lat": 46.2276,
+        "lng": 2.2137
+      },
+      "id": 87654321
+    },
+    {
       "cityName": "New York",
       "country": "United States",
       "emoji": "US",
       "date": "2027-01-15T08:22:53.976Z",
-      "notes": "",
+      "notes": "The city that never sleeps!",
       "position": {
         "lat": 40.7127753,
         "lng": -74.0059728
       },
       "id": 12345678
-    },
-    {
-      "cityName": "Tokyo",
-      "country": "Japan",
-      "emoji": "JP",
-      "date": "2027-03-20T10:30:00.000Z",
-      "notes": "A city full of life!",
-      "position": {
-        "lat": 35.6894875,
-        "lng": 139.6917064
-      },
-      "id": 87654321
     }
   ]
 }
