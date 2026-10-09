@@ -2,7 +2,7 @@
 // searchParams.get() - It is used to get the value of a specific query parameter from the URL.
 // useNavigate() hook allows you to navigate from one page/route to another using JavaScript, instead of clicking a <Link>.
 // useMap() hook allows React components to gain direct access to the Leaflet map instance and handle things like zooming, panning, and markers.
-// useMapEvents () to define properties for different types of event
+// useMapEvents() hook allows React components to listen for and respond to events on the Leaflet map instance, such as clicks, drags, and zooms.
 
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
@@ -13,16 +13,23 @@ import {
   useMap,
   useMapEvent,
 } from "react-leaflet";
+
 import styles from "./Map.module.css";
 import ReactCountryFlag from "react-country-flag";
 import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
+import { useGeolocation } from "../hooks/useGeoLocation";
+import Button from "./Button";
 
 function Map() {
   const { cities } = useCities();
-
   const [mapPosition, setMapPosition] = useState([40, 0]); // Default position (latitude, longitude)
+
   const [searchParams] = useSearchParams();
+  const {
+    isLoading: isLoadingPosition, 
+    position: geolocationPosition,
+    getPosition} = useGeolocation();
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
@@ -33,8 +40,24 @@ function Map() {
     },
     [mapLat, mapLng],
   );
+
+  useEffect(
+    function () {
+      if (geolocationPosition) {
+        setMapPosition([geolocationPosition.lat, 
+        geolocationPosition.lng]);
+      }
+    },
+    [geolocationPosition],
+  );
+
   return (
     <div className={styles.mapContainer}>
+      {!geolocationPosition && (
+      <Button type="position" onClick={getPosition}>
+        {isLoadingPosition ? "Loading..." : "Use your position"}
+      </Button>
+    )}
       <MapContainer
         center={mapPosition}
         zoom={6}
@@ -50,29 +73,29 @@ function Map() {
             position={[city.position.lat, city.position.lng]}
             key={city.id}
           >
-            <Popup>
-              <span>
-                <ReactCountryFlag
-                  countryCode={city.emoji}
-                  svg
-                  style={{
-                    fontSize: "1.6em",
-                    lineHeight: "1.6em",
-                    marginRight: "8px",
-                  }}
-                  aria-label={city.cityName}
-                />{" "}
-                {city.cityName}
-              </span>
-            </Popup>
-          </Marker>
-        ))}
+    <Popup>
+      <span>
+        <ReactCountryFlag
+          countryCode={city.emoji}
+          svg
+          style={{
+            fontSize: "1.6em",
+            lineHeight: "1.6em",
+            marginRight: "8px",
+          }}
+          aria-label={city.cityName}
+        />{" "}
+        {city.cityName}
+      </span>
+    </Popup>
+  </Marker>
+))}
 
-        <ChangePosition position={mapPosition} />
-        <DetectClick />
-      </MapContainer>
-    </div>
-  );
+  <ChangePosition position={mapPosition} />
+  <DetectClick />
+</MapContainer>
+</div>
+);
 }
 
 function  ChangePosition({ position }) {
@@ -85,7 +108,7 @@ function DetectClick() {
   const navigate = useNavigate();
 
   useMapEvent({
-    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    click:(e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
   });
 }
 
