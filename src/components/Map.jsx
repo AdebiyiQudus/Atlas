@@ -58,7 +58,8 @@ function Map() {
         {isLoadingPosition ? "Loading..." : "Use your position"}
       </Button>
     )}
-      <MapContainer
+
+    <MapContainer
         center={mapPosition}
         zoom={6}
         scrollWheelZoom={true}
