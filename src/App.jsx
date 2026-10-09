@@ -20,37 +20,34 @@ import { CitiesProvider } from "./contexts/CitiesContext";
 
 function App() {
   return (
-    <CitiesProvider> 
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Homepage />} />
-        <Route path="pricing" element={<Pricing />} />
-        <Route path="product" element={<Product />} />
-        <Route path="login" element={<Login />} />
-        <Route path="app" element={<AppLayout />}>
-        
-      // replace prop changes how navigation interacts with the browser's history stack by replacing the current entry in history instead of adding a new one.
-        <Route index element = {<Navigate replace to="cities" />} />
-
-      // Default route for the "app" whenever the app page is rendered or when no specific child route is provided
-          {/* <Route index element={<CityList  citiesProp={cities}
+    <CitiesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Homepage />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="product" element={<Product />} />
+          <Route path="login" element={<Login />} />
+          <Route path="app" element={<AppLayout />}>
+            {/* replace prop changes how navigation interacts with the browser's
+            history stack by replacing the current entry in history instead of
+            adding a new one. */}
+            <Route index element={<Navigate replace to="cities" />} />
+            {/* Default route for the "app" whenever the app page is rendered or
+            when no specific child route is provided */}
+            {/* <Route index element={<CityList  citiesProp={cities}
            isLoadingProp={isLoading} />} /> */}
+            {/* Nested routes for the "app" path */}
+            <Route path="cities" element={<CityList />} />
+            <Route path="cities/:id" element={<City />} />
+            <Route path="countries" element={<CountryList />} />
+            <Route path="form" element={<Form />} />
+          </Route>
 
-      // Nested routes for the "app" path
-          <Route path="cities" element={<CityList />} />
-
-           <Route path="cities/:id" element={<City />} />
-           
-          <Route path="countries" element={<CountryList/>} />
-          <Route path="form" element={<Form />} />
-
-        </Route>
-
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </CitiesProvider>
-  )
+  );
 }
 
 export default App;
