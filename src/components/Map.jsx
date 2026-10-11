@@ -18,6 +18,7 @@ import styles from "./Map.module.css";
 import ReactCountryFlag from "react-country-flag";
 import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
+
 import { useGeolocation } from "../hooks/useGeoLocation";
 import Button from "./Button";
 
