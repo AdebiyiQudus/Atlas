@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // If there's no default position specified, it will be null.
 export function useGeolocation(defaultPosition = null) {
   const [isLoading, setIsLoading] = useState(false);
+  
   const [position, setPosition] = useState(defaultPosition);
   const [error, setError] = useState(null);
 
