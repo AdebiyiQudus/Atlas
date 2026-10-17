@@ -1,5 +1,6 @@
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
+// Geocoding is the process of converting a physical address or place name into geographical coordinates — usually latitude and longitude — that can be used to identify its exact location on a map
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Form.module.css";
