@@ -1,7 +1,7 @@
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
 // Geocoding is the process of converting a physical address or place name into geographical coordinates — usually latitude and longitude — that can be used to identify its exact location on a map
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Form.module.css";
 import Button from "./Button";
@@ -18,14 +18,37 @@ export function convertToEmoji(countryCode) {
 
 function Form() {
  const navigate = useNavigate();
- const [mapLat, mapLng] = useUrlPosition();
- console.log(mapLat)
+ const [lat, lng] = useUrlPosition();
+ 
 
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
+
+  const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
+  useEffect(function () {
+   async function fetchCityData() {
+     try {
+      setIsLoadingGeocoding(true);
+      const res = await fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
+      );
+      const data = await res.json();
+      setCityName(data.city || data.locality || "");
+      setCountry(data.countryCode || "");
+     } catch (err) {
+      console.error("Error fetching city data:", err);
+     } finally {
+      setIsLoadingGeocoding(false);
+     }
+   }
+
+   if (lat && lng) {
+     fetchCityData();
+   }
+ }, [lat, lng]);
 
   return (
     <form className={styles.form}>
