@@ -16,38 +16,35 @@ export function convertToEmoji(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 
+const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 function Form() {
  const navigate = useNavigate();
  const [lat, lng] = useUrlPosition();
  
 
+ const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
 
-  const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   useEffect(function () {
    async function fetchCityData() {
-     try {
+    try {
       setIsLoadingGeocoding(true);
-      const res = await fetch(
-        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
-      );
+      const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`);
       const data = await res.json();
+      console.log(data)
       setCityName(data.city || data.locality || "");
-      setCountry(data.countryCode || "");
-     } catch (err) {
-      console.error("Error fetching city data:", err);
-     } finally {
+      setCountry(data.countryName || "");
+    } catch (err) {
+      console.error(err); 
+    } finally {
       setIsLoadingGeocoding(false);
-     }
+    }
    }
-
-   if (lat && lng) {
-     fetchCityData();
-   }
+   fetchCityData();
  }, [lat, lng]);
 
   return (
