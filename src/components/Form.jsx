@@ -39,7 +39,8 @@ function Form() {
       console.log(data)
 
       if (!data.countryCode) 
-        throw new Error("That doesn't seem to be a city. Click somewhere else on the map.");
+        throw new Error(
+      "That doesn't seem to be a city. Click somewhere else on the map.");
 
       setCityName(data.city || data.locality || "");
       setCountry(data.countryName);
