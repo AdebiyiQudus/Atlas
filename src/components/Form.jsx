@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUrlPosition } from "../hooks/useUrlPosition";
 import ReactCountryFlag from "react-country-flag";
+
 import styles from "./Form.module.css";
 import Button from "./Button";
 import BackButton from "./BackButton";
@@ -33,7 +34,7 @@ function Form() {
     try {
       setIsLoadingGeocoding(true);
       setGeocodingError("");
-      
+
       const res = await fetch(
         `${BASE_URL}?latitude=${lat}&longitude=${lng}`);
       const data = await res.json();
