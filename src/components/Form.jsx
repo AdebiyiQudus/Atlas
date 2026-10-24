@@ -30,6 +30,8 @@ function Form() {
   const [geocodingError, setGeocodingError] = useState("");
 
   useEffect(function () {
+    if (!lat || !lng) return;
+    
    async function fetchCityData() {
     try {
       setIsLoadingGeocoding(true);
