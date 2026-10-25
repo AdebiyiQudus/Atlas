@@ -59,6 +59,54 @@
         "lng": -74.0059728
       },
       "id": 12345678
+    },
+    {
+      "cityName": "Itesiwaju",
+      "country": "Nigeria",
+      "emoji": "NG",
+      "date": "2026-10-25T01:42:52.923Z",
+      "notes": "",
+      "position": {
+        "lat": "8.185303200781485",
+        "lng": "3.7105061526052734"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Goaso",
+      "country": "Ghana",
+      "emoji": "GH",
+      "date": "2026-10-25T02:00:26.696Z",
+      "notes": "",
+      "position": {
+        "lat": "6.625824436591684",
+        "lng": "-2.528917958546211"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Kassou",
+      "country": "Burkina Faso",
+      "emoji": "BF",
+      "date": "2026-10-25T02:01:53.799Z",
+      "notes": "",
+      "position": {
+        "lat": "11.395266519230182",
+        "lng": "-2.111379343990041"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Cantalice",
+      "country": "Italy",
+      "emoji": "IT",
+      "date": "2026-10-25T02:07:39.114Z",
+      "notes": "",
+      "position": {
+        "lat": "42.468239546972164",
+        "lng": "12.895075520740209"
+      },
+      "id": 98443202
     }
   ]
 }
