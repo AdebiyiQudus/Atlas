@@ -85,18 +85,6 @@
       "id": 98443200
     },
     {
-      "cityName": "Kassou",
-      "country": "Burkina Faso",
-      "emoji": "BF",
-      "date": "2026-10-25T02:01:53.799Z",
-      "notes": "",
-      "position": {
-        "lat": "11.395266519230182",
-        "lng": "-2.111379343990041"
-      },
-      "id": 98443201
-    },
-    {
       "cityName": "Cantalice",
       "country": "Italy",
       "emoji": "IT",
@@ -107,6 +95,19 @@
         "lng": "12.895075520740209"
       },
       "id": 98443202
+    },
+    {
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "countryCode": "GB",
+      "emoji": "GB",
+      "date": "2026-10-25T02:51:06.838Z",
+      "notes": "",
+      "position": {
+        "lat": "51.409181827303776",
+        "lng": "-0.09240643615827217"
+      },
+      "id": 98443203
     }
   ]
 }
