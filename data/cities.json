@@ -1,5 +1,18 @@
 {
   "cities": [
+     {
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "countryCode": "GB",
+      "emoji": "GB",
+      "date": "2026-10-25T02:51:06.838Z",
+      "notes": "",
+      "position": {
+        "lat": "51.409181827303776",
+        "lng": "-0.09240643615827217"
+      },
+      "id": 98443203
+    },
     {
       "cityName": "Lisbon",
       "country": "Portugal",
@@ -83,19 +96,7 @@
         "lng": "12.895075520740209"
       },
       "id": 98443202
-    },
-    {
-      "cityName": "London",
-      "country": "United Kingdom of Great Britain and Northern Ireland",
-      "countryCode": "GB",
-      "emoji": "GB",
-      "date": "2026-10-25T02:51:06.838Z",
-      "notes": "",
-      "position": {
-        "lat": "51.409181827303776",
-        "lng": "-0.09240643615827217"
-      },
-      "id": 98443203
     }
+   
   ]
 }
