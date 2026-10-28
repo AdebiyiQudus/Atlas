@@ -4,12 +4,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUrlPosition } from "../hooks/useUrlPosition";
+import { useCities } from "../contexts/CitiesContext";
 
 import ReactCountryFlag from "react-country-flag";
 import DatePicker from "react-datePicker";
 import "react-datepicker/dist/react-datepicker.css";
-
-import { useCities } from "../contexts/CitiesContext";
 
 import styles from "./Form.module.css";
 import Button from "./Button";
@@ -32,7 +31,6 @@ function Form() {
  const navigate = useNavigate();
  const [lat, lng] = useUrlPosition();
  const { createCity, isLoading } = useCities();
- 
 
  const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [cityName, setCityName] = useState("");
