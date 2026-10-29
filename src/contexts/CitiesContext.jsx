@@ -64,10 +64,12 @@ function CitiesProvider({ children }) {
     async function deleteCity(id) {
      try {
       setIsLoading(true);
-      const res = await fetch(`${BASE_URL}/cities/${id}`, {
+      await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
-      setCities((cities) => [...cities, data]);
+// Loop through the cities and filter out the deleted city by the ID clicked, then update the state
+      setCities((cities) => cities.filter((city) => 
+        city.id !== id));
 
     } catch {
       alert("There was an error deleting data...");
