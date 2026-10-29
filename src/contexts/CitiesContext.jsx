@@ -32,7 +32,7 @@ function CitiesProvider({ children }) {
       const data = await res.json();
       setCurrentCity(data);
     } catch {
-      alert("There was an error loading data...");
+      alert("There was an error fetching the city...");
     } finally {
       setIsLoading(false);
     }
@@ -56,6 +56,21 @@ function CitiesProvider({ children }) {
 
     } catch {
       alert("There was an error loading data...");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+    
+    async function deleteCity(id) {
+     try {
+      setIsLoading(true);
+      const res = await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+      setCities((cities) => [...cities, data]);
+
+    } catch {
+      alert("There was an error deleting data...");
     } finally {
       setIsLoading(false);
     }
