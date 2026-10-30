@@ -1,6 +1,6 @@
 {
   "cities": [
-     {
+    {
       "cityName": "London",
       "country": "United Kingdom of Great Britain and Northern Ireland",
       "countryCode": "GB",
@@ -74,18 +74,6 @@
       "id": 12345678
     },
     {
-      "cityName": "Itesiwaju",
-      "country": "Nigeria",
-      "emoji": "NG",
-      "date": "2026-10-25T01:42:52.923Z",
-      "notes": "",
-      "position": {
-        "lat": "8.185303200781485",
-        "lng": "3.7105061526052734"
-      },
-      "id": 98443198
-    },
-    {
       "cityName": "Cantalice",
       "country": "Italy",
       "emoji": "IT",
@@ -97,6 +85,5 @@
       },
       "id": 98443202
     }
-   
   ]
 }

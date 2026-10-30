@@ -16,14 +16,14 @@ function CityItem({ city }) {
   // Safety guard in case city is undefined
   if (!city) return null;
   
-  const {currentCity} = useCities();
+  const {currentCity, deleteCity} = useCities();
   const { cityName, emoji, date, id, position } = city;
 
   function handleClick(e) {
     e.preventDefault();
-    
+    deleteCity(id);
   }
-
+  
   return (
     <li>
     <Link 
