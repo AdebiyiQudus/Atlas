@@ -4,6 +4,17 @@ const BASE_URL = "http://localhost:9000";
 
 const CitiesContext = createContext();
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "ADD_CITY":
+      return [...state, action.payload];
+    case "DELETE_CITY":
+      return state.filter((city) => city.id !== action.payload);
+    default:
+      return state;
+  }
+}
+
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
