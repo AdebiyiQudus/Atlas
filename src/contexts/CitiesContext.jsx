@@ -4,6 +4,15 @@ const BASE_URL = "http://localhost:9000";
 
 const CitiesContext = createContext();
 
+const initialState = {
+  cities: [],
+  isLoading: false,
+  currentCity: {},
+  getCity: () => {},
+  createCity: () => {},
+  deleteCity: () => {},
+};
+
 function reducer(state, action) {
   switch (action.type) {
     case "ADD_CITY":
