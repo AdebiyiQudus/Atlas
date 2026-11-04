@@ -4,14 +4,6 @@ const BASE_URL = "http://localhost:9000";
 
 const CitiesContext = createContext();
 
-const initialState = {
-  cities: [],
-  isLoading: false,
-  currentCity: {},
-  getCity: () => {},
-  createCity: () => {},
-  deleteCity: () => {},
-};
 
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
