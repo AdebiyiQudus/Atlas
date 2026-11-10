@@ -15,6 +15,20 @@ const InitialState = {
   currentCity: {},
 } 
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "SET_CITIES":
+      return { ...state, cities: action.payload };
+    case "SET_IS_LOADING":
+      return { ...state, isLoading: action.payload };
+    case "SET_CURRENT_CITY":
+      return { ...state, currentCity: action.payload };
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
+  }
+}
+
+
   useEffect(function () {
     async function fetchCities() {
       try {
