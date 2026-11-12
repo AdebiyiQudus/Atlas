@@ -11,6 +11,7 @@ const InitialState = {
   currentCity: {},
 } 
 
+// Reducer function to manage state updates
 function reducer(state, action) {
   switch (action.type) {
     case "SET_CITIES":
