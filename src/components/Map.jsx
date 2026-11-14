@@ -6,12 +6,8 @@
 
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMap,
-  useMapEvent,
+  MapContainer, TileLayer, Marker, 
+  Popup, useMap, useMapEvent,
 } from "react-leaflet";
 
 import styles from "./Map.module.css";
