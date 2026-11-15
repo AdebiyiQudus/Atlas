@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, 
+  useEffect, useContext } from "react";
 
 const BASE_URL = "http://localhost:9000";
 
@@ -9,7 +10,7 @@ const InitialState = {
   cities: [],
   isLoading: false,
   currentCity: {},
-} 
+}   
 
 // Reducer function to manage state updates
 function reducer(state, action) {
