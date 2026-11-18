@@ -4,7 +4,7 @@ const BASE_URL = "http://localhost:9000";
 
 const CitiesContext = createContext();
 
-
+// Initial state for the context
 const InitialState = {
   cities: [],
   isLoading: false,
