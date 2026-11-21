@@ -24,6 +24,7 @@ function reducer(state, action) {
       throw new Error(`Unhandled action type: ${action.type}`);
   }
 }
+// C
 
 function CitiesProvider({ children }) {
   const[{ cities, isLoading, currentCity }, dispatch] =
