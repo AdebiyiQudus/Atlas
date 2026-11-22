@@ -15,16 +15,9 @@ const InitialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "SET_CITIES":
-      return { ...state, cities: action.payload };
-    case "SET_IS_LOADING":
-      return { ...state, isLoading: action.payload };
-    case "SET_CURRENT_CITY":
-      return { ...state, currentCity: action.payload };
-    default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      return { ...state, cities: action.payload };                                                                                                                                              
   }
 }
-// C
 
 function CitiesProvider({ children }) {
   const[{ cities, isLoading, currentCity }, dispatch] =
