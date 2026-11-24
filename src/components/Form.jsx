@@ -32,6 +32,7 @@ function Form() {
  const [lat, lng] = useUrlPosition();
  const { createCity, isLoading } = useCities();
 
+ // Form state
  const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
