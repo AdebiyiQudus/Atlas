@@ -90,6 +90,7 @@ function Form() {
     navigate("/app/cities");
 }
 
+// Render logic
   if (isLoadingGeocoding) return <Spinner />;
   if (!lat || !lng) return 
   <Message message="Start by clicking somewhere on the map" />;
