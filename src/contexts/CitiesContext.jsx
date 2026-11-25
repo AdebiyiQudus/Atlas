@@ -77,7 +77,8 @@ function CitiesProvider({ children }) {
       setIsLoading(false);
     }
   }
-    
+   
+  // Function to delete a city by ID
     async function deleteCity(id) {
      try {
       setIsLoading(true);
