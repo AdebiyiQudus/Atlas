@@ -95,6 +95,7 @@ function Map() {
 );
 }
 
+// Change Position component
 function  ChangePosition({ position }) {
   const map = useMap();
   map.setView(position);
